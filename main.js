@@ -18,15 +18,15 @@ function load_img() {
 		hole_obj.scaleToHeight(50);
 		hole_obj.set({
 			top: hole_y,
-			left: ball_x
+			left: hole_x
 		});
 		canvas.add(hole_obj);
 	});
 
 	fabric.Image.fromURL("ball.png", function (Img) {
 		ball_obj = Img;
-		ball_obj.scaleToWidth(50);
-		ball_obj.scaleToHeight(50);
+		ball_obj.scaleToWidth(30);
+		ball_obj.scaleToHeight(30);
 		ball_obj.set({
 			top: ball_y,
 			left: ball_x
@@ -54,10 +54,10 @@ function my_keydown(e) {
 	and make canvas border 'red'. */
 	if ((ball_x == hole_x) && (ball_y == hole_y)) {
 		canvas.remove(ball_obj);
-	}
-	document.getElementById("hd3").innerHTML = "You have Hit the Goal!!!";
-	document.getElementById("myCanvas").style.borderColor = "red";
+		document.getElementById("hd3").innerHTML = "You have Hit the Goal!!!";
+		document.getElementById("myCanvas").style.borderColor = "red";
 
+	}
 
 	if (keyPressed == '38') {
 		up();
